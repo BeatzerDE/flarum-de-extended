@@ -1,0 +1,64 @@
+ianm-follow-users:
+
+  admin:
+    permissions:
+      be_followed_label: Erlaube Benutzer zu folgen
+
+  forum:
+    profile_link: => ianm-follow-users.lib.following_link
+    user_controls:
+      follow_button: Folgen
+      follow_confirmation: Bist du sicher, dass du diesen Benutzer folgen möchtest?
+      unfollow_button: Nicht mehr folgen
+      unfollow_confirmation: Bist du sicher, dass du diesen Benutzer nicht mehr folgen möchtest?
+
+    settings:
+      notify_new_follower_label: Jemand folgt mir
+      notify_new_unfollower_label: Jemand folgt mir nicht mehr
+      notify_new_discussion_label: Jemand, dem ich folge, hat eine Diskussion gestartet
+      notify_new_post_label: Jemand, dem ich folge, hat auf eine Diskussion geantwortet
+      block_follow: Verhindern, dass Benutzer mir folgen können
+
+    index:
+      follow_tag_button: Folgen
+      unfollow_tag_button: Nicht mehr folgen
+
+    notifications:
+      new_discussion_text: "{username} startet"
+      new_post_text: "{username} hat auf eine Diskussion geantwortet"
+      new_follower_text: "{username} folgt dir"
+      new_unfollower_text: "{username} folgt dir nicht mehr"
+
+    badge:
+      label: Gefolgter Benutzer
+
+    filter:
+      following: Gefolgte Benutzer
+
+  email:
+    new_discussion_by_user_subject: "[Gefolgte Benutzer] {title}"
+    new_follower_subject: "[Gefolgte Benutzer] Jemand folgt dir!"
+    new_post_subject: "[Gefolgte Benutzer] Neuer Beitrag zu {title}"
+    new_discussion_by_user_body: |
+      Hey {recipient_display_name},
+      {user_display_name} hat eine neue Diskussion gestartet: {discussion_title}
+      Um die Diskussion anzusehen, klicke auf den folgenden Link:
+      {discussion_url}
+      ---
+      {post_content}
+    new_follower_body: |
+      Hey {recipient_display_name},
+      {follower_display_name} jemand folgt dir jetzt, er wird also benachrichtigt, wenn du eine neue Diskussion startest.
+      Um sein Profil anzusehen, klicke auf den folgenden Link:
+      {profile_url}
+    new_post_body: |
+      Hey {recipient_display_name},
+      {user_display_name} hat auf folgende Diskussion geantwortet: {discussion_title}
+      Um dir die neuen Beiträge anzusehen, klicke auf den folgenden Link:
+      {post_url}
+      ---
+      {post_content}
+      ---
+      Du wirst keine weiteren Benachrichtigungen über diese Diskussion erhalten, bis du auf dem neusten Stand bist.
+  lib:
+    following_link: Gefolgte Benutzer
